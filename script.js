@@ -159,7 +159,7 @@
 let arr = [];
 
 for(i = 0; i < Infinity; i++){
-    a = prompt('Вопросы ответы все')
+    a = prompt(`Вы можете добавить ползователей add, имя. Через del, имя вы можете удалить ползователя, если напишите stop функция остановится`)
     b = a.split(' ');
     if(b[0] == 'add' || b[0] == 'add,'){
         arr.push(b[1])
@@ -168,9 +168,11 @@ for(i = 0; i < Infinity; i++){
         for(let key in arr){
             if(b[1] == arr[key]){
                 arr.splice(key, 1)
+                console.log('удалил ' + b[1]);
+            }else if(b[1] != arr[key]){
+                console.log(`Несуществуеший ползовать ${b[1]}`);
             }
         }
-        console.log('удалил ' + b[1]);
     }
     if(a == 'stop' || a == 'Stop'){
         break;
